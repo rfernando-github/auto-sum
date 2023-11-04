@@ -37,7 +37,7 @@ function App() {
       .then((openAIResponse) => {
         const summarizedText = openAIResponse.data.choices[0].text.trim();
         axios
-          .post('http://127.0.0.1:5000/summarize', { golden_summary: summarizedText, input_text: text })
+          .post('http://54.242.126.110:5000/summarize', { golden_summary: summarizedText, input_text: text })
           .then((localApiResponse) => {
             const result = localApiResponse.data;
             setCustomSummary(result.custom_summary);
